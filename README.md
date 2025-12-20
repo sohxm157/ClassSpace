@@ -25,25 +25,30 @@ flowchart LR
     F -->|REST API| B[Backend Server]
     B -->|Queries| D[(Database)]
     B -->|JWT Token| F
+```
 
+```mermaid
 flowchart TD
-    A[User opens Login Page] --> B[Enter Email & Password]
-    B --> C[Select Role: Student / Teacher]
+    A[User Opens Login Page] --> B[Enter Email and Password]
+    B --> C[Select Role]
 
     C --> D[Frontend Validation]
     D -->|Invalid| E[Show Validation Error]
     D -->|Valid| F[Send Login Request]
 
     F --> G[Backend Authentication]
-    G --> H{Credentials Valid?}
+    G --> H{Credentials Valid}
 
     H -->|No| I[Return Error Message]
     H -->|Yes| J[Generate JWT Token]
 
     J --> K{User Role}
-    K -->|Student| L[Redirect to Student Dashboard]
-    K -->|Teacher| M[Redirect to Teacher Dashboard]
+    K -->|Student| L[Student Dashboard]
+    K -->|Teacher| M[Teacher Dashboard]
 
+
+```
+```mermaid
     flowchart TD
     A[Login Page Component]
     A --> B[Email Input State]
@@ -54,12 +59,14 @@ flowchart TD
     C --> E
     D --> E
 
-    E --> F[API Call (Fetch / Axios)]
+    E --> F[API Call]
     F --> G{Response}
 
     G -->|Success| H[Store JWT Token]
     G -->|Error| I[Display Error Message]
 
+```
+```mermaid
 flowchart TD
     A[POST /auth/login] --> B[Auth Controller]
     B --> C[User Service]
@@ -72,7 +79,8 @@ flowchart TD
     E -->|Invalid| H[Wrong Password Error]
 
     G --> I[Send Token & User Role]
-
+```
+```mermaid
 flowchart TD
     A[Protected Route Access] --> B[JWT Middleware]
     B -->|Invalid Token| C[401 Unauthorized]
@@ -81,13 +89,16 @@ flowchart TD
     D --> E{Role Type}
     E -->|Student| F[Student Routes]
     E -->|Teacher| G[Teacher Routes]
-
+```
+```mermaid
 flowchart TD
     A[Login Success] --> B[JWT Token Issued]
-    B --> C[Store Token (LocalStorage)]
+    B --> C[Store Token]
     C --> D[Attach Token to API Headers]
     D --> E[Access Protected Resources]
 
+```
+```mermaid
 flowchart TD
     A[API Request Failure] --> B{Error Type}
     B -->|401| C[Session Expired]
@@ -97,4 +108,4 @@ flowchart TD
     C --> F[Redirect to Login Page]
     D --> G[Show Authorization Error]
     E --> H[Show Retry Message]
-
+```
