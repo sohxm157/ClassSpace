@@ -42,4 +42,8 @@ public class FeedbackService {
 		
 		return feedbacks;
 	}
+	
+	public void deleteAllFeedbacks() {
+		feedbackRepository.deleteAll();
+	}
 }
