@@ -1,0 +1,111 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  padding: 20px;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+}
+
+.nav-center {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.divider {
+  margin: 0 8px;
+  color: #888;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.profile-link:hover {
+  opacity: 0.85;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.username {
+  font-weight: 500;
+}
+
+/* ================= DASHBOARD ================= */
+.dashboard {
+  display: flex;
+  gap: 20px;
+}
+
+.announcements,
+.timetable {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.announcements {
+  width: 40%;
+}
+
+.timetable {
+  width: 60%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+thead {
+  background: #2c3e50;
+  color: #ffffff;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.empty-table {
+  text-align: center;
+  color: #777;
+}
