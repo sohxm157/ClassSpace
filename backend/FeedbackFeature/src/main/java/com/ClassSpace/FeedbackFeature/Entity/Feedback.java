@@ -52,7 +52,7 @@ public class Feedback {
 	@Column(name="submitted_at",nullable=false,insertable=false,columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private LocalDateTime submittedAt;
 	
-	private enum Understand{
+	public enum Understand{
 		YES,NO
 	}
 }
