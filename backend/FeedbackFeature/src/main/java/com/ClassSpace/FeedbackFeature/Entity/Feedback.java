@@ -32,7 +32,7 @@ public class Feedback {
 	private int lectureId;
 	
 	@Column(name="student_id",nullable=false)
-	private int studentId;
+	private String studentId;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(columnDefinition="ENUM('YES','NO')")

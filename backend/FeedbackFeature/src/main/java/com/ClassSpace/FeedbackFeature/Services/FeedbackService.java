@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.ClassSpace.FeedbackFeature.DTO.FeedbackDTO;
 import com.ClassSpace.FeedbackFeature.Entity.Feedback;
 import com.ClassSpace.FeedbackFeature.Respositories.FeedbackRepository;
+import com.ClassSpace.FeedbackFeature.utils.GenerateHash;
 
 @Service
 public class FeedbackService {
@@ -20,7 +21,10 @@ public class FeedbackService {
 	}
 	
 	public void save(FeedbackDTO dto) {
-		boolean alreadyExists = feedbackRepository.existsByLectureIdAndStudentId(dto.getLectureId(), dto.getStudentId());
+		//Hashing the Student ID before saving to the database
+		
+		String hashedStudentId = GenerateHash.generateHash(String.valueOf(dto.getStudentId()));
+		boolean alreadyExists = feedbackRepository.existsByLectureIdAndStudentId(dto.getLectureId(), hashedStudentId);
 		
 		if(alreadyExists) {
 			throw new IllegalArgumentException("Feedback already exists for this lecture and student.");
@@ -29,6 +33,7 @@ public class FeedbackService {
 		Feedback feedback = new Feedback();
 		BeanUtils.copyProperties(dto, feedback);
 		feedback.setUnderstand(Feedback.Understand.valueOf(dto.getUnderstand()));
+		feedback.setStudentId(hashedStudentId);
 		System.out.println(feedback.getUnderstand());
 		feedbackRepository.save(feedback);
 	}

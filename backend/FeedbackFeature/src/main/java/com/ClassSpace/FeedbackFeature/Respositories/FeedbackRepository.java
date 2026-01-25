@@ -12,9 +12,9 @@ import com.ClassSpace.FeedbackFeature.Entity.Feedback;
 public interface FeedbackRepository extends JpaRepository<Feedback, Integer> {
 	public int findByLectureId(int lectureId);
 	
-	public int findByStudentId(int studentId);
+	public String findByStudentId(String studentId);
 	
-	public boolean existsByLectureIdAndStudentId(int lectureId, int studentId);
+	public boolean existsByLectureIdAndStudentId(int lectureId, String studentId);
 	
 	@Query("SELECT f.comment FROM Feedback f WHERE f.isValid = true")
 	public List<String> findAllComments();
