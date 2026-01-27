@@ -50,4 +50,5 @@ public class FeedbackController {
 		feedbackService.deleteAllFeedbacks();
 		return ResponseEntity.status(HttpStatus.OK).body("All The Feedbacks Deleted Successfully");
 	}
+	
 }
