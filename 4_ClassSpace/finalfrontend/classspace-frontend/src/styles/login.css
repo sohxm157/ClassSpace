@@ -1,0 +1,190 @@
+/* Prevent scroll */
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 🔥 THIS STOPS SCROLL COMPLETELY */
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page */
+.login-page {
+  height: 100vh;
+  width: 100vw;
+  background: #f5f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* Card */
+.login-card {
+  position: relative;   /* 🔥 MUST for top-right register */
+  width: 420px;
+  background: #fff;
+  padding: 36px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+
+/* Header */
+.login-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo {
+  width: 52px;
+  height: 52px;
+  background: #2f6fed;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.login-header h1 {
+  margin: 0;
+  color: #000; /* black */
+}
+
+.login-header p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Labels */
+.login-card label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #000;
+}
+
+/* Inputs */
+.login-card input {
+  width: 100%;
+  padding: 11px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #d0d7e2;
+  background: #ffffff;
+  font-size: 14px;
+  color: #000;
+}
+
+.login-card input::placeholder {
+  color: #9aa3b2; /* grey but visible */
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: #2f6fed;
+}
+
+/* Role */
+.login-as {
+  margin-top: 4px;
+}
+
+.role-box {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.role-box button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d0d7e2;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+}
+
+.role-box button.active {
+  border-color: #2f6fed;
+  color: #2f6fed;
+  font-weight: 600;
+}
+
+/* Submit */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #2f6fed;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+}
+
+/* Links */
+.forgot {
+  text-align: center;
+  margin-top: 16px;
+  color: #2f6fed;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Error */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.register-top {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+}
+
+.register-top span {
+  font-size: 14px;
+  color: #2f6fed;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.register-top span:hover {
+  text-decoration: underline;
+}
+
+

@@ -1,0 +1,317 @@
+/* ===== LECTURE PAGE (Card + Poll UI) ===== */
+
+.lecture-page {
+  padding: 24px;
+  background: #f4f7fb;
+  min-height: calc(100vh - 64px);
+  /* navbar */
+  box-sizing: border-box;
+}
+
+.lecture-card {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.lecture-card-header {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid #eef2f7;
+  text-align: center;
+}
+
+.lecture-subject {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: 0.2px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.lecture-meta {
+  margin-top: 8px;
+  font-size: 10px;
+  color: #9ca3af;
+  /* light grey */
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: lowercase;
+  letter-spacing: 0.4px;
+  line-height: 1.4;
+}
+
+.lecture-card-body {
+  padding: 18px 20px 20px;
+}
+
+.lp-section-title {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #111827;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.lp-pill-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.lp-pill {
+  border: none;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: transform 0.06s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  user-select: none;
+}
+
+.lp-pill:active {
+  transform: scale(0.98);
+}
+
+.lp-pill[data-active="false"] {
+  opacity: 0.65;
+}
+
+.lp-pill[data-active="true"] {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  outline: 2px solid rgba(17, 24, 39, 0.08);
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+.lp-pill--present {
+  background: #16a34a;
+  /* green */
+}
+
+.lp-pill--absent {
+  background: #ef4444;
+  /* red */
+}
+
+.lp-pill--positive {
+  background: #2563eb;
+  /* blue */
+}
+
+.lp-pill--negative {
+  background: #ef4444;
+  /* red */
+}
+
+.lp-sep {
+  color: #9ca3af;
+  font-weight: 800;
+}
+
+.lp-dash {
+  border-top: 1px dashed #d1d5db;
+  margin: 16px 0;
+}
+
+.lp-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+
+.lp-star-btn {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  /* emoji size */
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px;
+  filter: grayscale(0);
+  transition: transform 0.06s ease, opacity 0.15s ease;
+}
+
+.lp-star-btn:active {
+  transform: scale(0.96);
+}
+
+.lp-star-btn[data-on="false"] {
+  opacity: 0.35;
+}
+
+.lp-star-btn[data-on="true"] {
+  opacity: 1;
+}
+
+.lp-textarea {
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 12px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.lp-textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.lp-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.lp-submit {
+  border: none;
+  background: #111827;
+  color: #ffffff;
+  font-weight: 800;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.06s ease;
+}
+
+.lp-submit:active {
+  transform: scale(0.98);
+}
+
+.lp-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.lp-status {
+  text-align: center;
+  color: #6b7280;
+  font-size: 13px;
+  margin-top: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Status message type variants */
+.lp-status--success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.lp-status--error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.lp-status--warning {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde047;
+}
+
+.lp-status--info {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+/* Error and success message styling */
+.lp-error-msg {
+  color: #dc2626;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lp-success-msg {
+  color: #16a34a;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Loading indicator */
+.lp-loading {
+  color: #6b7280;
+  font-style: italic;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Disabled pill buttons */
+.lp-pill:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Disabled star buttons */
+.lp-star-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Disabled textarea */
+.lp-textarea:disabled {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Feedback disabled state */
+.lp-feedback-disabled {
+  padding: 20px;
+  text-align: center;
+}
+
+.lp-feedback-success {
+  padding: 20px;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .lecture-page {
+    padding: 14px;
+  }
+
+  .lecture-card-body {
+    padding: 16px;
+  }
+
+  .lecture-subject {
+    font-size: 20px;
+  }
+}

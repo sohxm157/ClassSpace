@@ -1,0 +1,227 @@
+/* ===== PAGE BASE ===== */
+.profile-container {
+  height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6fb;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== CARD ===== */
+.profile-card {
+  width: 900px;
+  height: 420px;
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  padding: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+/* ===== EDIT BUTTON ===== */
+.edit-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-btn:hover {
+  background: #1e40af;
+}
+
+/* ===== LEFT ===== */
+.profile-left {
+  width: 35%;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 25px;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.email {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+.locked-info {
+  font-size: 14px;
+  color: #374151;
+  margin: 2px 0;
+}
+
+/* ===== RIGHT ===== */
+.profile-right {
+  width: 65%;
+  padding-left: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 18px;
+  align-content: center;
+}
+
+/* ===== FORM ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* Disabled */
+.form-group input:disabled,
+.form-group textarea:disabled {
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* Enabled */
+.form-group input:not(:disabled),
+.form-group textarea:not(:disabled) {
+  background: #ffffff;
+  border: 1px solid #2563eb;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* ===== FIELD ERROR (🔥 MAIN FIX 🔥) ===== */
+.field-error {
+  color: #dc2626;        /* RED */
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 400;
+  display: block;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.action-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.save-btn {
+  background: #16a34a;
+  color: #ffffff;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.save-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ===== SUCCESS / ERROR BANNER ===== */
+.profile-success {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #dcfce7;
+  color: #166534;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.profile-error {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .profile-card {
+    width: 95%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .profile-left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 20px;
+  }
+
+  .profile-right {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+}

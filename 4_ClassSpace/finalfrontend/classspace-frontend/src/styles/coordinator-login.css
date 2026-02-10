@@ -1,0 +1,103 @@
+.coord-login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.coord-login-card {
+  background: #ffffff;
+  width: 420px;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.coord-badge {
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  background: #2563eb;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.coord-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.coord-subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.coord-login-card label {
+  font-weight: 500;
+  margin-top: 1rem;
+  display: block;
+}
+
+.coord-login-card input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.4rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  outline: none;
+}
+
+.coord-login-card input:focus {
+  border-color: #2563eb;
+}
+
+.coord-login-card button {
+  width: 100%;
+  margin-top: 1.8rem;
+  padding: 0.75rem;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.coord-login-card button:hover {
+  background: #1d4ed8;
+}
+
+/* Title: ClassSpace */
+.coord-title {
+  color: #000000; /* black */
+}
+
+/* Labels: Email, Password */
+.coord-login-card label {
+  color: #000000; /* black */
+}
+
+.coord-error {
+  color: #dc2626;       
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in;
+}
+ 
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+

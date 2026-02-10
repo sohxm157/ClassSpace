@@ -1,0 +1,289 @@
+/* CoordinatorDashboard.css */
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --bg-dark: #0f172a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --accent-neon: #10b981;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+}
+
+.coordinator-container {
+    padding: 30px;
+    height: 100vh;
+    /* Fixed height for viewport */
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Enable vertical scroll for the page */
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+}
+
+.page-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.drill-down-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.nav-item {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav-item:hover {
+    color: #fff;
+}
+
+.nav-separator {
+    color: #475569;
+}
+
+/* Improved Layout */
+.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+    /* Vertical Scrolling Fix */
+    max-height: 65vh;
+    overflow-y: auto;
+    padding-right: 10px;
+    /* Space for scrollbar */
+}
+
+/* Custom Scrollbar for Grid */
+.selection-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.selection-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.selection-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.action-cube {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+    cursor: pointer;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-cube .icon {
+    font-size: 40px;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.action-cube:hover .icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.action-cube h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    z-index: 2;
+}
+
+.action-cube p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+    z-index: 2;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.premium-modal-overlay {
+    overflow-y: auto;
+    /* Ensure modal is scrollable */
+}
+
+/* Consistent Buttons */
+.btn-premium {
+    background: var(--primary-gradient);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-premium:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Timetable styling */
+.timetable-container {
+    margin-top: 30px;
+}
+
+.timetable-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.timetable-table th {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid var(--glass-border);
+}
+
+.timetable-table td {
+    padding: 12px;
+    border: 1px solid var(--glass-border);
+    vertical-align: top;
+}
+
+.slot-item {
+    background: rgba(99, 102, 241, 0.1);
+    border-left: 3px solid #6366f1;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.search-wrapper {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 12px 15px 12px 40px;
+    color: white;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: #6366f1;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Modal Overlay Styles (Fixes Spill Issue) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    color: #1e293b;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
